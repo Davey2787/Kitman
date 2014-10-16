@@ -1,0 +1,90 @@
+#include <sys/types.h>
+#include <sys/ipc.h>
+#include <sys/shm.h>
+#include <iostream>
+#include <string>
+#include <unistd.h>
+#include <sys/sem.h>
+
+
+using namespace std; 
+
+#define SHM_KEY 9876
+#define SEMKEY 151
+
+main()
+{
+
+	struct sembuf vsembuf, psembuf, v1sembuf, p1sembuf, v2sembuf, p2sembuf;
+	int semid, i;
+
+	semid = semget(SEMKEY, 3, 0777|IPC_CREAT);
+	//semctl(semid, 0, SETVAL, 1);
+	//semctl(semid, 1, SETVAL, 1);
+	//semctl(semid, 2, SETVAL, 1);
+
+	psembuf.sem_num = 0;
+	psembuf.sem_op = -1;
+	psembuf.sem_flg = SEM_UNDO;
+
+	vsembuf.sem_num = 0;
+	vsembuf.sem_op = 1;
+	vsembuf.sem_flg = SEM_UNDO;
+ 
+	p1sembuf.sem_num = 1;
+	p1sembuf.sem_op = -1;
+	p1sembuf.sem_flg = SEM_UNDO;
+
+	v1sembuf.sem_num = 1;
+	v1sembuf.sem_op = 1;
+	v1sembuf.sem_flg = SEM_UNDO;
+	
+	p2sembuf.sem_num = 2;
+	p2sembuf.sem_op = -1;
+	p2sembuf.sem_flg = SEM_UNDO;
+
+	v2sembuf.sem_num = 2;
+	v2sembuf.sem_op = 1;
+	v2sembuf.sem_flg = SEM_UNDO;
+
+	int shmid;
+	int producer_item = 2;
+	int consumer_item = 2;
+	// declare a pointer that will point to a
+	// location in the memory that holds an integer
+	int* ptr;  
+	
+	// create a 256 byte block of shared memory 
+	// that can be read, writtten and accessed by any user
+	shmid = shmget(SHM_KEY, 256, 0777|IPC_CREAT);
+	
+
+	// attach the process to the shared memory area 
+	// pointer points at the first memory location
+	// in the shared memory 
+	
+	ptr = (int *) shmat(shmid, 0, 0);	
+	*ptr =  producer_item;
+	*(ptr + 1) = consumer_item;
+	while(1)
+	{	
+			semop(semid, &p1sembuf, 1); // wait data
+			producer_item = *ptr;
+			consumer_item = *(ptr + 1);
+
+		if(1 < *(ptr + 1) && *(ptr + 1) < 10)
+		{		
+			semop(semid, &p2sembuf, 1); // wait free	
+			cout<<"\nNumber stored in buffer number "<<consumer_item;
+			cout<<"\n"<<*(ptr + consumer_item);
+			if(consumer_item != 2)producer_item--;
+			if(consumer_item != 2)consumer_item--;
+			*ptr = producer_item;
+			*(ptr + 1) = consumer_item;
+			semop(semid, &v2sembuf, 1); // signal free
+		}
+			semop(semid, &vsembuf, 1); // signal space
+	}
+}
+
+

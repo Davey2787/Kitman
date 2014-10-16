@@ -1,0 +1,21 @@
+C:\Users\c08080674\Documents\Visual Studio 2010\Projects\Calculator_Csharp1\Calculator_Csharp1\bin\Debug\Calculator_Csharp1.exe
+C:\Users\c08080674\Documents\Visual Studio 2010\Projects\Calculator_Csharp1\Calculator_Csharp1\bin\Debug\Calculator_Csharp1.pdb
+C:\Users\c08080674\Documents\Visual Studio 2010\Projects\Calculator_Csharp1\Calculator_Csharp1\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\c08080674\Documents\Visual Studio 2010\Projects\Calculator_Csharp1\Calculator_Csharp1\obj\x86\Debug\Calculator_Csharp1.Form1.resources
+C:\Users\c08080674\Documents\Visual Studio 2010\Projects\Calculator_Csharp1\Calculator_Csharp1\obj\x86\Debug\Calculator_Csharp1.Properties.Resources.resources
+C:\Users\c08080674\Documents\Visual Studio 2010\Projects\Calculator_Csharp1\Calculator_Csharp1\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\c08080674\Documents\Visual Studio 2010\Projects\Calculator_Csharp1\Calculator_Csharp1\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\c08080674\Documents\Visual Studio 2010\Projects\Calculator_Csharp1\Calculator_Csharp1\obj\x86\Debug\Calculator_Csharp1.exe
+C:\Users\c08080674\Documents\Visual Studio 2010\Projects\Calculator_Csharp1\Calculator_Csharp1\obj\x86\Debug\Calculator_Csharp1.pdb
+C:\Users\c08080674\Documents\Visual Studio 2010\Projects\Calculator_Csharp1\Calculator_Csharp1\bin\Debug\DLLMathFuncs.dll
+C:\Users\c08080674\Documents\Visual Studio 2010\Projects\Calculator_Csharp1\Calculator_Csharp1\bin\Debug\DLLMathFuncs.pdb
+E:\networks\Calculator_Csharp1\Calculator_Csharp1\obj\x86\Debug\Calculator_Csharp1.exe
+E:\networks\Calculator_Csharp1\Calculator_Csharp1\obj\x86\Debug\Calculator_Csharp1.pdb
+E:\networks\Calculator_Csharp1\Calculator_Csharp1\bin\Debug\Calculator_Csharp1.exe
+E:\networks\Calculator_Csharp1\Calculator_Csharp1\bin\Debug\Calculator_Csharp1.pdb
+E:\networks\Calculator_Csharp1\Calculator_Csharp1\bin\Debug\DLLMathFuncs.dll
+E:\networks\Calculator_Csharp1\Calculator_Csharp1\bin\Debug\DLLMathFuncs.pdb
+E:\networks\Calculator_Csharp1\Calculator_Csharp1\obj\x86\Debug\Calculator_Csharp1.csprojResolveAssemblyReference.cache
+E:\networks\Calculator_Csharp1\Calculator_Csharp1\obj\x86\Debug\Calculator_Csharp1.Form1.resources
+E:\networks\Calculator_Csharp1\Calculator_Csharp1\obj\x86\Debug\Calculator_Csharp1.Properties.Resources.resources
+E:\networks\Calculator_Csharp1\Calculator_Csharp1\obj\x86\Debug\Calculator_Csharp1.csproj.GenerateResource.Cache

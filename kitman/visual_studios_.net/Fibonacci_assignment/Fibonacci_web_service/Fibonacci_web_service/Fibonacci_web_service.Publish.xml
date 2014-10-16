@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="C:\Users\David Byrne\Fibonacci_calculator" deleteExistingFiles="False" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="David's Fibonacci calculator web service" publishMethod="FileSystem" replaceMatchingFiles="True" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
+    <file relUrl="bin/Fibonacci_web_service.pdb" publishTime="04/12/2014 19:53:50" />
+    <file relUrl="Service1.asmx" publishTime="04/12/2014 19:45:33" />
+    <file relUrl="Web.config" publishTime="04/12/2014 20:02:37" />
+    <file relUrl="bin/Fibonacci_web_service.dll" publishTime="04/12/2014 19:53:50" />
+  </publishProfile>
+</publishData>

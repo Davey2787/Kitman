@@ -1,0 +1,32 @@
+// This program is the text class which allows the user to write text to a file
+// and upload it to an easygraphics window
+import java.io.PrintWriter;
+
+public class Txt
+{
+	//Private varibles
+	private int x1;
+	private int y1;
+	private String txt;
+	
+	// Constructer
+	public Txt(String text1, int xpos, int ypos)
+	{
+		this.x1 = xpos;
+		this.y1 = ypos;
+		this.txt = text1;
+	}
+	
+	// Writes the users input text to a file 
+	public void write(PrintWriter printWriter)
+	{
+		printWriter.println(this.x1 + " " + this.y1 + " " + " " + this.txt);
+	}
+	// Writes the users input text to the easygraphics display	
+	public void draw(EasyGraphics easyGraphics)
+	{
+		easyGraphics.textAt(this.txt, this.x1, this.y1);
+	        easyGraphics.repaint();
+	}
+}
+

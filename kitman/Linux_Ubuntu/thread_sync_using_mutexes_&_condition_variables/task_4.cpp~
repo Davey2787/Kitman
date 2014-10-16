@@ -1,0 +1,70 @@
+#include <iostream>
+#include <unistd.h>
+#include <pthread.h> /*POSIX threads*/
+#include <string>
+
+using namespace std;
+
+pthread_mutex_t lock = PTHREAD_MUTEX_INITIALIZER;
+pthread_mutex_t finish = PTHREAD_MUTEX_INITIALIZER;
+pthread_cond_t print = PTHREAD_COND_INITIALIZER;
+pthread_cond_t  clean_up = PTHREAD_COND_INITIALIZER;
+int count;
+string message;
+
+void *thread_routine1(void *argl)
+{
+
+	pthread_mutex_lock(&lock);
+	cout<<"\nEnter information\n\n";
+	getline(cin, message);
+	count++;
+	if(count == 1)pthread_cond_signal(&print);
+	pthread_mutex_unlock(&lock);	
+	return NULL;
+}
+
+void *thread_routine2(void *argl)
+{
+	pthread_mutex_lock(&lock);
+	if(count == 0)pthread_cond_wait(&print, &lock);
+	cout<<"\n"<<message<<"\n";
+	count++;
+	if(count == 2)pthread_cond_signal(&clean_up);
+	pthread_mutex_unlock(&lock);
+	return NULL;
+}
+
+int main()
+{
+	
+		pthread_t thread1;
+		pthread_t thread2;
+
+		/*create thread*/
+
+		int rc;
+	
+			rc = pthread_create(&thread1, NULL, thread_routine1, NULL);
+				if(rc == 1)
+				{	
+					cout<<"Thread creation 1 failed\n";
+				}
+			
+			rc = pthread_create(&thread2, NULL, thread_routine2, NULL);
+				if(rc == 1)
+				{	
+					cout<<"Thread creation 2 failed\n";
+				}
+
+	pthread_mutex_lock(&finish);
+	if(count != 2)pthread_cond_wait(&clean_up, &finish);			
+	cout<<"\nmain thread is finished\n\n";
+	pthread_mutex_destroy(&lock);
+	pthread_cond_destroy(&print);
+	pthread_mutex_unlock(&finish);
+	pthread_mutex_destroy(&finish);
+	pthread_cond_destroy(&clean_up);
+	pthread_exit(NULL);
+
+}

@@ -1,0 +1,2 @@
+g++ `pkg-config opencv --cflags` stereo_display2.cpp  -o stereo_display `pkg-config opencv --libs` -lpthread -lX11
+

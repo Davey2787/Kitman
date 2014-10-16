@@ -1,0 +1,55 @@
+#include <iostream>
+#include <unistd.h>
+#include <pthread.h> /*POSIX threads*/
+#include <string>
+
+using namespace std;
+
+pthread_mutex_t lock = PTHREAD_MUTEX_INITIALIZER;
+string message;
+
+void *thread_routine1(void *argl)
+{
+
+	pthread_mutex_lock(&lock);
+	cout<<"\nEnter information\n";
+	getline(cin, message);
+	pthread_mutex_unlock(&lock);
+	return NULL;
+}
+
+void *thread_routine2(void *argl)
+{
+	pthread_mutex_lock(&lock);
+	cout<<message<<"\n";
+	pthread_mutex_unlock(&lock);
+	return NULL;
+}
+
+int main()
+{
+	
+		pthread_t thread1;
+		pthread_t thread2;
+
+		/*create thread*/
+
+		int rc;
+	
+			rc = pthread_create(&thread1, NULL, thread_routine1, NULL);
+				if(rc == 1)
+				{	
+					cout<<"Thread creation 1 failed\n";
+				}
+			
+			rc = pthread_create(&thread2, NULL, thread_routine2, NULL);
+				if(rc == 1)
+				{	
+					cout<<"Thread creation 2 failed\n";
+				}
+			
+	cout<<"main thread is finished\n";
+	pthread_mutex_destroy (&lock);	
+	pthread_exit(NULL);
+
+}

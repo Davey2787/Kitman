@@ -1,0 +1,6 @@
+C:\Users\David Byrne\Documents\Visual Studio 2010\Projects\Fibonacci_series_calculator\Fibonacci_series_calculator\bin\Debug\Fibonacci_series_calculator.exe.config
+C:\Users\David Byrne\Documents\Visual Studio 2010\Projects\Fibonacci_series_calculator\Fibonacci_series_calculator\bin\Debug\Fibonacci_series_calculator.exe
+C:\Users\David Byrne\Documents\Visual Studio 2010\Projects\Fibonacci_series_calculator\Fibonacci_series_calculator\bin\Debug\Fibonacci_series_calculator.pdb
+C:\Users\David Byrne\Documents\Visual Studio 2010\Projects\Fibonacci_series_calculator\Fibonacci_series_calculator\obj\x86\Debug\Fibonacci_series_calculator.exe
+C:\Users\David Byrne\Documents\Visual Studio 2010\Projects\Fibonacci_series_calculator\Fibonacci_series_calculator\obj\x86\Debug\Fibonacci_series_calculator.pdb
+C:\Users\David Byrne\Documents\Visual Studio 2010\Projects\Fibonacci_series_calculator\Fibonacci_series_calculator\obj\x86\Debug\Fibonacci_series_calculator.csprojResolveAssemblyReference.cache

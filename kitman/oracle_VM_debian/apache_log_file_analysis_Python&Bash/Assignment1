@@ -1,0 +1,26 @@
+Assignment 1:  Scripts for Apache log file analysis.
+
+Work in pairs.
+Each pair will be assigned individual log files.
+
+Description.
+
+Your task is to write two scripts: a bash script and a python script.
+Both scripts are to do the same job: analyse the data in an apache access log file.
+Your sripts should
+1) List the top 10 visitors to the site by IP address and, if possible, by name
+2) List the top ten pdf downloads from the site
+3) List the top 5 Browsers/user agents that visit the site.
+4) The number of ipv6 visitors (if any)
+
+Delivery:
+1) Five minute presentation of your scripts
+2) Fully commented scripts
+3) Two page report containing:  
+	Strategy for tackling the problem
+	Key points of difficulty
+	Comparison of the Bash and Python versions (which was: easier to write, to read, faster to run etc.)
+	Table of results.
+
+
+

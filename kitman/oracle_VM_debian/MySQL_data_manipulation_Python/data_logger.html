@@ -1,0 +1,35 @@
+<html>
+<head>
+	<Title>Simple dynamic web page</Title>
+	<style>
+		h1
+		{
+			text-align: center;
+		}
+		h2 
+		{ 
+			color: green;
+			
+		}
+	</style>
+</head>
+<body>
+
+<form method = "post" action = "log.py/log" enctype = "multipart/form-data">
+	X_coor: <input type = "number" name = "x"><br>
+	Y_coor: <input type = "number" name = "y"><br>
+	<input type = "submit" name = "submit" value = Log>
+</form>
+
+<form method = "post" action = "log.py/fetch" enctype = "multipart/form-data">
+	
+	<input type = "submit" name = "submit" value = Fetch>
+</form>	
+
+<form method = "post" action = "log.py/graph" enctype = "multipart/form-data">
+	
+	<input type = "submit" name = "submit" value = Graph>
+</form>	
+
+</body>
+</html>
